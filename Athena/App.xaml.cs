@@ -1,4 +1,5 @@
 ﻿using Athena.Services;
+using Athena.Services.DependencyInjection;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -9,6 +10,8 @@ namespace Athena
 {
     public class App : Application
     {
+        private DependencyInjectionService dependencyInjectionService { get; set; }
+
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
@@ -19,12 +22,12 @@ namespace Athena
             base.OnFrameworkInitializationCompleted();
 
             if (!(ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)) return;
-            
-            var db = new Database();
+
+            dependencyInjectionService = new DependencyInjectionService();
 
             desktop.MainWindow = new MainWindow
             {
-                DataContext = new MainWindowViewModel(db),
+                DataContext = dependencyInjectionService.GetInstance<MainWindowViewModel>(),
             };
 
         }

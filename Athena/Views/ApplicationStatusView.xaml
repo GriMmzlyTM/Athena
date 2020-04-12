@@ -1,0 +1,25 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="Athena.Views.ApplicationStatusView" >
+	<Grid Width="400" Height="200" ShowGridLines="True">
+		<StackPanel 
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			Spacing="15">
+			<StackPanel 
+				Name="player-data">
+				<TextBlock 
+					Text="{Binding ApplicationConfig.EnvironmentEnum}"/>
+			</StackPanel>
+			<Button
+			Width="200"
+			Height="35">
+				<TextBlock
+					TextAlignment="Center"
+					Text="Hello" />
+			</Button>
+		</StackPanel>
+	</Grid>
+</UserControl>
