@@ -2,10 +2,16 @@
 
 namespace Athena.Models.Config
 {
-    public class ApplicationConfigModel
+    /// <summary>
+    /// Application configuration data parsed from yaml
+    /// </summary>
+    public class ApplicationConfigModel : Model
     {
         public string Environment { get; set; }
-        public Enum EnvironmentEnum => Enum.Parse<DevelopmentEnvironment>(Environment, true);
+        public DevelopmentEnvironment EnvironmentEnum { get; set; }
+
+        public RiotAPIConfigModel RiotApiConfig { get; set; }
+
     }
 
     public enum DevelopmentEnvironment
@@ -14,6 +20,5 @@ namespace Athena.Models.Config
         Staging = 1,
         Prod = 2,
         Test = 3,
-        Invalid = 999
     }
 }

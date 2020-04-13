@@ -12,34 +12,50 @@
     </AvaloniaResource>
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
+	<ItemGroup>
+		<None Update="AthenaConfig.yml;" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
   <ItemGroup>
-    <AvaloniaResource Remove="Views\AddItemView.xaml" />
-    <AvaloniaResource Remove="Views\TodoListView.xaml" />
+    <AvaloniaResource Remove="Views\ApplicationOverlaySettingsView.xaml" />
+    <AvaloniaResource Remove="Views\ApplicationStatusView.xaml" />
+    <AvaloniaResource Remove="Views\CSOverlayView.xaml" />
+    <AvaloniaResource Remove="Views\FindAccountView.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Views\AddItemView.xaml" />
-    <None Remove="Views\TodoListView.xaml" />
+    <None Remove="Views\ApplicationOverlaySettingsView.xaml" />
+    <None Remove="Views\ApplicationStatusView.xaml" />
+    <None Remove="Views\CSOverlayView.xaml" />
+    <None Remove="Views\FindAccountView.xaml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.9.7" />
     <PackageReference Include="Avalonia.Desktop" Version="0.9.7" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.7" />
+    <PackageReference Include="RiotSharp" Version="4.0.0" />
     <PackageReference Include="SimpleInjector" Version="4.9.2" />
     <PackageReference Include="YamlDotNet" Version="8.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\TodoListView.xaml">
+    <EmbeddedResource Include="Views\FindAccountView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\AddItemView.xaml">
+    <EmbeddedResource Include="Views\Application\ApplicationStatusView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\TodoListView.xaml.cs">
-      <DependentUpon>TodoListView.xaml</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Views\Application\ApplicationOverlaySettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Overlay\CSOverlayView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\Overlay\" />
   </ItemGroup>
 </Project>

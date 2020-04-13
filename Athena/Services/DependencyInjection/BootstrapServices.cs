@@ -15,12 +15,12 @@ namespace Athena.Services.DependencyInjection
         public void RegisterServices(Container container)
         {
             // Configuration management
-            var bootstrapConfig = new BootstrapConfig();
-            bootstrapConfig.RegisterServices(container);
+            new BootstrapConfig()
+                .RegisterServices(container);
 
             // Riot API 
-            var bootstrapRiot = new BootstrapRiot();
-            bootstrapRiot.RegisterServices(container);
+            new BootstrapRiot()
+                .RegisterServices(container);
         }
     }
 }

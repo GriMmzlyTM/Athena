@@ -1,5 +1,4 @@
-﻿using Athena.Services;
-using Athena.Services.Config;
+﻿using Athena.ViewModels.Application;
 using ReactiveUI;
 
 namespace Athena.ViewModels
@@ -9,7 +8,7 @@ namespace Athena.ViewModels
 
 
         private ViewModelBase _content;
-        private ApplicationStatusViewModel _applicationStatusViewModel { get; set; }
+        private ApplicationStatusViewModel _applicationStatusViewModel { get; }
         public ViewModelBase Content
         {
             get => _content;

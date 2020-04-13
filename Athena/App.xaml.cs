@@ -1,4 +1,5 @@
 ﻿using Athena.Services;
+using Athena.Services.Config;
 using Athena.Services.DependencyInjection;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
@@ -24,6 +25,8 @@ namespace Athena
             if (!(ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)) return;
 
             dependencyInjectionService = new DependencyInjectionService();
+
+            dependencyInjectionService.GetInstance<ApplicationUpdateConfigService>().Execute();
 
             desktop.MainWindow = new MainWindow
             {
