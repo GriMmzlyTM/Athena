@@ -4,7 +4,7 @@ using SimpleInjector;
 
 namespace Athena.Services.Riot.Account
 {
-    public class BootstrapRiotAPIAccount : IBootstrapServices
+    public class BootstrapRiotAPIAccount : IBootstrap
     {
         public void RegisterServices(Container container)
         {

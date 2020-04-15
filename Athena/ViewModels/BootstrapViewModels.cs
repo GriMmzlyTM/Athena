@@ -7,7 +7,7 @@ namespace Athena.ViewModels
     /// <summary>
     /// Bootstrap all viewmodels. Called by Entrypoint (DependencyInjectionService)
     /// </summary>
-    class BootstrapViewModels : IBootstrapServices
+    class BootstrapViewModels : IBootstrap
     {
         public void RegisterServices(Container container)
         {

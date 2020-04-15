@@ -1,9 +1,8 @@
-﻿using System;
-using Athena.Models.Account;
+﻿using Athena.Models.Account;
 using Athena.Models.Payloads;
 using Athena.Models.Payloads.Riot.Account;
-using RiotSharp;
 using RiotSharp.Endpoints.SummonerEndpoint;
+using System;
 
 namespace Athena.Services.Riot.Account
 {

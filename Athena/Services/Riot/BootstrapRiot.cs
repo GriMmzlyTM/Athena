@@ -7,7 +7,7 @@ namespace Athena.Services.Riot
     /// <summary>
     /// Register riot API services
     /// </summary>
-    public class BootstrapRiot : IBootstrapServices
+    public class BootstrapRiot : IBootstrap
     {
         public void RegisterServices(Container container)
         {

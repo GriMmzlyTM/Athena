@@ -2,7 +2,7 @@
 
 namespace Athena.Services.DependencyInjection
 {
-    public interface IBootstrapServices
+    public interface IBootstrap
     {
         void RegisterServices(Container container);
     }

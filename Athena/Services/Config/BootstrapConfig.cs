@@ -7,7 +7,7 @@ namespace Athena.Services.Config
     /// <summary>
     /// Register configuration services (AthenaConfig.yml etc)
     /// </summary>
-    class BootstrapConfig : IBootstrapServices
+    class BootstrapConfig : IBootstrap
     {
         public void RegisterServices(Container container)
         {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Athena.Models.Config
+﻿namespace Athena.Models.Config
 {
     /// <summary>
     /// Application configuration data parsed from yaml

@@ -1,5 +1,8 @@
 ﻿namespace Athena.Models
 {
+    /// <summary>
+    /// Base implementation models are based on
+    /// </summary>
     public class Model : IModel
     {
         public void Update<TModel>(TModel model) 

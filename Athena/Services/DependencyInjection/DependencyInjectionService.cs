@@ -13,7 +13,7 @@ namespace Athena.Services.DependencyInjection
             _container = new Container();
 
             // Entrypoint for registration => Registers all services
-            new BootstrapServices()
+            new Bootstrap()
                 .RegisterServices(_container);
 
             // Register all ViewModels
