@@ -10,6 +10,8 @@
 
         public RiotAPIConfigModel RiotApiConfig { get; set; }
 
+        public ViewConfigModel HomeView { get; set; }
+
     }
 
     public enum DevelopmentEnvironment

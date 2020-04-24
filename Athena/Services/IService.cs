@@ -2,9 +2,13 @@
 
 namespace Athena.Services
 {
+    public interface IService<in TServicePayload> where TServicePayload: IServicePayload
+    {
+        void Execute(TServicePayload payload);
+    }
+
     public interface IService
     {
         void Execute();
-        void Execute<TServicePayload>(TServicePayload payload) where TServicePayload : class, IServicePayload;
     }
 }

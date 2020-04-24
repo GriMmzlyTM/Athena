@@ -1,11 +1,12 @@
-﻿using Avalonia.Controls;
+﻿using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Athena.Views.Overlay
+namespace Athena.Views.Modules.FFXIV
 {
-    public class CSOverlayView : UserControl
+    public class FinalFantasyXIVSettingsView : UserControl
     {
-        public CSOverlayView()
+        public FinalFantasyXIVSettingsView()
         {
             this.InitializeComponent();
         }

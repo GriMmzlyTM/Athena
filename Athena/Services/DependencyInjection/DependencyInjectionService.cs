@@ -13,7 +13,7 @@ namespace Athena.Services.DependencyInjection
             _container = new Container();
 
             // Entrypoint for registration => Registers all services
-            new Bootstrap()
+            new BootstrapServices()
                 .RegisterServices(_container);
 
             // Register all ViewModels
@@ -25,7 +25,5 @@ namespace Athena.Services.DependencyInjection
 
         public void Execute() { }
 
-        public void Execute<TServicePayload>(TServicePayload payload) where TServicePayload : class, IServicePayload =>
-            Execute();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Athena.ViewModels.Application;
+using Athena.ViewModels.Overlay;
 using ReactiveUI;
 
 namespace Athena.ViewModels
@@ -8,7 +9,7 @@ namespace Athena.ViewModels
 
 
         private ViewModelBase _content;
-        private ApplicationStatusViewModel _applicationStatusViewModel { get; }
+        private ApplicationHomeViewModel _applicationHomeViewModel { get; }
         public ViewModelBase Content
         {
             get => _content;
@@ -16,10 +17,11 @@ namespace Athena.ViewModels
         }
 
         public MainWindowViewModel(
-            ApplicationStatusViewModel applicationStatusViewModel)
+            ApplicationHomeViewModel applicationHomeViewModel)
         {
-            _applicationStatusViewModel = applicationStatusViewModel;
-            Content = _applicationStatusViewModel;
+
+            _applicationHomeViewModel = applicationHomeViewModel;
+            Content = applicationHomeViewModel;
         }
 
         /*public void AddItem()

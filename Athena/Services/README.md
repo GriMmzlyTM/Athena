@@ -21,7 +21,7 @@ ViewModel gives user `X`
 
 A service must implement an interfact that itself implements `IService`
 
-This is because when a service is injected, it's injected through its interfact and not as a concrete class.
+This is because when a service is injected, it's injected through its interface and not as a concrete class.
 
 ```
 Services

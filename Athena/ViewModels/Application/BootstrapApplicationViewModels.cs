@@ -10,7 +10,8 @@ namespace Athena.ViewModels.Application
     {
         public void RegisterServices(Container container)
         {
-            container.Register<ApplicationStatusViewModel>();
+            container.Register<ApplicationSettingsViewModel>();
+            container.Register<ApplicationHomeViewModel>();
         }
     }
 }

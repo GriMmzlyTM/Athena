@@ -1,11 +1,12 @@
-﻿using Avalonia.Controls;
+﻿using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Athena.Views.Application
+namespace Athena.Views.Overlay
 {
-    public class ApplicationOverlaySettingsView : UserControl
+    public class OverlayView : UserControl
     {
-        public ApplicationOverlaySettingsView()
+        public OverlayView()
         {
             this.InitializeComponent();
         }

@@ -1,6 +1,7 @@
 ﻿using Athena.Services;
 using Athena.Services.Config;
 using Athena.Services.DependencyInjection;
+using Athena.Services.Modules;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -27,6 +28,7 @@ namespace Athena
             dependencyInjectionService = new DependencyInjectionService();
 
             dependencyInjectionService.GetInstance<ApplicationUpdateConfigService>().Execute();
+            dependencyInjectionService.GetInstance<IModulesInitializationService>().Execute();
 
             desktop.MainWindow = new MainWindow
             {

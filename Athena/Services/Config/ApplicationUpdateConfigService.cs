@@ -23,9 +23,6 @@ namespace Athena.Services.Config
                     new Deserializer()
                     .Deserialize<ApplicationConfigModel>(
                         File.ReadAllText(_configPath)));
-
-        public void Execute<TServicePayload>(TServicePayload payload) where TServicePayload : class, IServicePayload =>
-            Execute();
     }
 
 }

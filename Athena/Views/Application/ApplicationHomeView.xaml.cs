@@ -1,12 +1,11 @@
-﻿using Avalonia;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Athena.Views
+namespace Athena.Views.Application
 {
-    public class FindAccountView : UserControl
+    public class ApplicationHomeView : UserControl
     {
-        public FindAccountView()
+        public ApplicationHomeView()
         {
             this.InitializeComponent();
         }

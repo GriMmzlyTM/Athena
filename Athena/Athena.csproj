@@ -18,14 +18,21 @@
   <ItemGroup>
     <AvaloniaResource Remove="Views\ApplicationOverlaySettingsView.xaml" />
     <AvaloniaResource Remove="Views\ApplicationStatusView.xaml" />
+    <AvaloniaResource Remove="Views\Application\ApplicationHomeView.xaml" />
+    <AvaloniaResource Remove="Views\Application\ApplicationHomeViewss.xaml" />
+    <AvaloniaResource Remove="Views\Application\ApplicationSettingsView.xaml" />
     <AvaloniaResource Remove="Views\CSOverlayView.xaml" />
-    <AvaloniaResource Remove="Views\FindAccountView.xaml" />
+    <AvaloniaResource Remove="Views\Modules\FFXIV\FinalFantasyXIVSettingsView.xaml" />
+    <AvaloniaResource Remove="Views\Overlay\OverlayView.xaml" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\ApplicationOverlaySettingsView.xaml" />
     <None Remove="Views\ApplicationStatusView.xaml" />
+    <None Remove="Views\Application\ApplicationHomeView.xaml" />
+    <None Remove="Views\Application\ApplicationSettingsView.xaml" />
     <None Remove="Views\CSOverlayView.xaml" />
-    <None Remove="Views\FindAccountView.xaml" />
+    <None Remove="Views\Modules\FFXIV\FinalFantasyXIVSettingsView.xaml" />
+    <None Remove="Views\Overlay\OverlayView.xaml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.9.7" />
@@ -36,26 +43,37 @@
     <PackageReference Include="YamlDotNet" Version="8.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\FindAccountView.xaml">
+    <EmbeddedResource Include="Views\Application\ApplicationHomeViewss.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Application\ApplicationStatusView.xaml">
+    <EmbeddedResource Include="Views\Overlay\OverlayView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Application\ApplicationOverlaySettingsView.xaml">
+    <Folder Include="Services\Modules\LeagueOfLegends\" />
+    <Folder Include="ViewModels\Riot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Application\ApplicationSettingsView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Overlay\CSOverlayView.xaml">
+    <EmbeddedResource Include="Views\Application\ApplicationHomeView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\Overlay\" />
+    <EmbeddedResource Include="Views\Modules\FFXIV\FinalFantasyXIVSettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\Application\ApplicationHomeViewss.xaml.cs">
+      <DependentUpon>ApplicationHomeViewss.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
