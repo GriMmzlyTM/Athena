@@ -1,14 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Reactive;
-using System.Runtime.CompilerServices;
-using Athena.Models.Account;
-using Athena.Models.Application;
+﻿using Athena.Models.Application;
 using Athena.Models.Config;
-using Athena.Models.Payloads.Riot.Account;
-using Athena.Services.Riot.Account;
 using Avalonia.Controls;
 using ReactiveUI;
-using RiotSharp.Misc;
+using System;
+using System.Collections.Generic;
+using System.Reactive;
 
 namespace Athena.ViewModels.Application
 {
@@ -25,21 +21,40 @@ namespace Athena.ViewModels.Application
             set => this.RaiseAndSetIfChanged(ref _gameOptionButtons, value);
         }
 
+        private ViewModelBase _moduleSettings;
+
+        public ViewModelBase ModuleSettings
+        {
+            get => _moduleSettings;
+            set => this.RaiseAndSetIfChanged(ref _moduleSettings, value);
+        }
+
+        public ReactiveCommand<ViewModelBase, Unit> RunUpdateSettings { get; }
+
         public ApplicationHomeViewModel(
             ApplicationConfigModel applicationConfigModel,
             ApplicationGameModulesListModel gameModulesList)
         {
             _gameModulesList = gameModulesList;
             _applicationConfigModel = applicationConfigModel;
+            RunUpdateSettings = ReactiveCommand.Create<ViewModelBase>(UpdateSettings);
             foreach (var module in gameModulesList.Modules)
             {
                 GameOptionButtons.Add(new Button()
                 {
                     Content = module.Value.Name,
+                    CommandParameter = (ViewModelBase)Activator.CreateInstance(module.Value.SettingsViewModel),
+                    Command = RunUpdateSettings,
                     Height = 30
                 });
             }
         }
+
+        public void UpdateSettings(ViewModelBase view)
+        {
+            ModuleSettings = view;
+        }
+
         /*
         public void UpdateSummoner(string summonerName)
         {

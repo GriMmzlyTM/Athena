@@ -8,14 +8,11 @@ namespace Athena.Services.Modules.FFXIV.Create
     public class FinalFantasyXIVModuleCreateService : IFinalFantasyXIVModuleCreateService
     {
         private readonly ApplicationUpdateGameModulesService _applicationUpdateGameModulesService;
-        private readonly FinalFantasyXIVSettingsViewModel _finalFantasyXivSettingsViewModel;
 
         public FinalFantasyXIVModuleCreateService(
-            ApplicationUpdateGameModulesService applicationUpdateGameModulesService,
-            FinalFantasyXIVSettingsViewModel finalFantasyXivSettingsViewModel)
+            ApplicationUpdateGameModulesService applicationUpdateGameModulesService)
         {
             _applicationUpdateGameModulesService = applicationUpdateGameModulesService;
-            _finalFantasyXivSettingsViewModel = finalFantasyXivSettingsViewModel;
         }
         public void Execute()
         {
@@ -31,5 +28,5 @@ namespace Athena.Services.Modules.FFXIV.Create
                     Module = module
                 });
         }
-    }
+    } 
 }
